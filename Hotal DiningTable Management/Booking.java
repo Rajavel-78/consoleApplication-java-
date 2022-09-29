@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 
 public class Booking {
 	static int tableid=11;
-   static Scanner scan=new Scanner(System.in);
+    Scanner scan=new Scanner(System.in);
    static Booking book=new Booking();
    static HashMap<Integer,Table>tableDetails=new HashMap<Integer,Table>();
    static HashMap<String,Double>foodDetails=new HashMap<String,Double>();
@@ -103,6 +103,7 @@ public class Booking {
 		int no=1;
 		System.out.println("--------------------------------\n--------ISRT HOTAL AC VEG--------\n---------List-------\n");
 		System.out.println("s.no\tname\tqua\tu.cost\tamount");
+		try {
 		ArrayList<String>arr=new ArrayList<String>(orderDetails.get(tableNo));
 		for(String i:arr) {
 			String []arr1=i.split(" ");
@@ -111,6 +112,9 @@ public class Booking {
 			total+=foodDetails.get(arr1[0])*Double.parseDouble(arr1[1]);
 		}System.out.println("\t\tTotal\t"+total);
 		tableDetails.get(tableNo).setStatus("Avilable");
+		}catch(Exception e) {
+			System.out.println("no iteams");
+		}
 		book.bookingOperation();
 	}
 	public void avilableTable() {
