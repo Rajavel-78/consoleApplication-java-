@@ -5,10 +5,10 @@ class Batting{
 	static ArrayList<HashMap>arr=new ArrayList<HashMap>();
 	
 	public static void main(String[] args)
-	{   
-	    tass(); 
+	{   Batting bat=new Batting();
+	    bat.tass(); 
 	}
-	public static void batting(ArrayList<String> teams){
+	public void batting(ArrayList<String> teams){
       int innings=0;
       int extra_run=0;
        System.out.println("Enter the Over");
@@ -224,7 +224,7 @@ class Batting{
 	System.out.println("-------"+teams.get(innings)+"-------");
 	}
 	}
-	}public static void tass(){
+	}public  void tass(){
 		System.out.println("-------^CRICKET GAME^----------");
 		ArrayList<String>teams=new ArrayList<String>();
 		System.out.println("Enter the TEAM 1 Name");
@@ -262,7 +262,8 @@ class Batting{
 				teams.add(team1);
 				teams.add(team2);
 			}
-		}batting(teams);
+		}Batting bat=new Batting();
+		bat.batting(teams);
 
 	}
 }
